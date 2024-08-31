@@ -1,0 +1,6 @@
+def last(a):
+        return a
+
+a = list(input("Enter list value:: "))
+for i in range(0,len(a)):
+     print(last(a[i]))
