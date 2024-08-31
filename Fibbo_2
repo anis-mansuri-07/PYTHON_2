@@ -5,3 +5,102 @@ for i in range(0,Fib_Seq):
     print(n1)
     n1 = n2
     n2 = temp
+
+
+// 1>add 2>delete 3>modify 4>simpl_seach 5>binary_search 6>sort 7>Exit
+
+#include<stdio.h>
+int main()
+{
+    int arr[5],element,choice=0,Inele=-1;
+    printf("1. Add \n2. delete \n3. Modify \n4. Simple Search \n5. Binary Search \n6. Sort \n7. Exit");
+    while(choice!=7)
+    {
+        printf("\nEnter Your Choice::  ");
+        scanf("%d",&choice);
+        switch(choice){
+            case 1: Inele = add(arr,Inele);break;
+            case 2: Inele = delete(arr,Inele);break;
+            case 3: modify(arr,Inele);break;
+            
+            
+            case 7: printf("Thank You..");break;
+            
+            default: printf("Entered wrong input\n");
+        }
+        
+    }
+}
+
+
+int add(int arr[],int Inele){
+    
+    if(Inele==4){
+        printf("Array is full\n");
+    }else{
+        Inele++;
+        //int i;
+        printf("Enter Element:: ");
+        scanf("%d",&arr[Inele]);
+       // arr[Inele] = i;
+        printf("Ele %d is added\n",arr[Inele]);
+    }
+    return Inele;
+}
+
+int delete(int arr[], int Inele){
+    
+    if(Inele==-1){
+        printf("Array is empty\n");
+    }else{
+        printf("%d is deleted\n",arr[Inele]);
+        arr[Inele] = 0;
+        Inele--;
+         }
+    return Inele;
+}
+
+int modify(int arr[],int Inele)
+{
+    int oldEle;//newEle;
+    if(Inele==-1){
+        printf("Array is empty..\n");
+    }else{
+    printf("Enter old element: ");
+    scanf("%d",&oldEle);
+    for(int i=0;i<=Inele;i++){
+        if(arr[i]==oldEle){
+            printf("Enter new ele:: ");
+            scanf("%d",&arr[i]);
+        }
+    }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
