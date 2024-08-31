@@ -7,9 +7,16 @@ for i in range(0,Fib_Seq):
     n2 = temp
 
 
-// 1>add 2>delete 3>modify 4>simpl_seach 5>binary_search 6>sort 7>Exit
+// 1>add 2>delete 3>modify 4>simpl_search 5>binary_search 6>sort 7>Exit
 
 #include<stdio.h>
+int add(int arr[],int Inele);
+int Delete(int arr[], int Inele);
+int modify(int arr[],int Inele);
+void S_search(int arr[],int Inele);
+void sort(int arr[],int Inele);
+
+
 int main()
 {
     int arr[5],element,choice=0,Inele=-1;
@@ -20,8 +27,11 @@ int main()
         scanf("%d",&choice);
         switch(choice){
             case 1: Inele = add(arr,Inele);break;
-            case 2: Inele = delete(arr,Inele);break;
+            case 2: Inele = Delete(arr,Inele);break;
             case 3: modify(arr,Inele);break;
+            case 4: S_search(arr,Inele);break;
+            //case 5:
+            case 6: sort(arr,Inele);break;
             
             
             case 7: printf("Thank You..");break;
@@ -48,7 +58,7 @@ int add(int arr[],int Inele){
     return Inele;
 }
 
-int delete(int arr[], int Inele){
+int Delete(int arr[], int Inele){
     
     if(Inele==-1){
         printf("Array is empty\n");
@@ -75,8 +85,33 @@ int modify(int arr[],int Inele)
         }
     }
     }
+    return 0;
 }
 
+void S_search(int arr[],int Inele)
+{
+    int s , count = 0 ;
+    printf("Enter value for search in array::  ");
+    scanf("%d",&s);
+    for(int i=0;i<=Inele;i++){
+        if(s==arr[i]){
+            printf("found that %d is on %dth index\n",arr[i],i);
+            count++;
+        }
+    }
+    if(count==0){
+        printf("Value is not there..\n");
+    }
+}
+
+void sort(int arr[],int Inele){
+    for(int i;i<=(Inele+1);i++)
+    {
+        if(arr[i]>arr[i+1]){
+            arr[i]
+        }
+    }
+}
 
 
 
