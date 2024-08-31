@@ -1,0 +1,7 @@
+n1 , n2 =  "A" , "B"
+Fib_Seq = int(input("How Many Fibonacci Sequence You want.."))
+for i in range(0,Fib_Seq):
+    temp = n2 + n1
+    print(n1)
+    n1 = n2
+    n2 = temp
