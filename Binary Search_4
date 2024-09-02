@@ -1,28 +1,42 @@
 def fun(a,start,ends,mid,value):
     if(value==a[mid]):
         return mid
-    elif(value>a[mid]): 
-        start = mid
-        mid = (start + ends) // 2
-        return fun(a,start,ends,mid,value)
-    elif(value<a[mid]):
-        ends = mid
-        mid = (start + ends) // 2
-        return fun(a,start,ends,mid,value)
-    #elif(mid==start or mid==ends):
-    #    return 0
+    else:
+               #if(start==ends):
+           # return -1
+        if(value>a[mid]): 
+           start = mid
+           mid = (start + ends) // 2
         
+           
+        elif(value<a[mid]):
+           ends = mid
+           mid = (start + ends) // 2
+           
+        if(mid==ends or mid== start):
+            
+            return -1
+               
+          
+        return fun(a,start,ends,mid,value)
+    #return -1
+    
 
 
-a =[10,20,30,40,50,60,70,60]
+a =[10,20,30,40,50,60,70]
 start = 0
-ends = len(a)
+ends = len(a)-1
 mid = ends // 2
-0
+
 value = int(input("Enter value:: "))
 
 value2 = fun(a,start,ends,mid,value)
-#if(value2==0):
-#    print("Value not in list..")
-#else:
-print("Value {} found at {} index".format(value,value2))
+if(value2==-1):
+    print("not found")
+else:
+    print("Value {} found at {} index".format(value,value2))           
+    
+    
+    
+    
+    
