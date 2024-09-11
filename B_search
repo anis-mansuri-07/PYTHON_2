@@ -1,0 +1,17 @@
+
+a =[10,20,30,40,50,60,70]
+value = int(input("Enter value:: "))
+start = 0
+ends = len(a)-1
+while(ends>=start):
+    mid = (start + ends)// 2
+    if(a[mid]==value):
+        print("found")
+        break
+    elif(value<a[mid]):
+        ends = mid-1
+    else:
+        start = mid + 1
+        
+else:
+    print("not found")
