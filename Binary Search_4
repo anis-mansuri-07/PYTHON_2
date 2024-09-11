@@ -10,13 +10,6 @@ def fun(start,ends,a,value):
     else:
         return fun(mid+1,ends,a,value)
     
-        
-
-
-
-
-
-
 a =[10,20,30,40,50,60,70]
 value = int(input("Enter value:: "))
 start = 0
