@@ -1,42 +1,17 @@
-def fun(a,start,ends,mid,value):
-    if(value==a[mid]):
-        return mid
-    else:
-               #if(start==ends):
-           # return -1
-        if(value>a[mid]): 
-           start = mid
-           mid = (start + ends) // 2
-        
-           
-        elif(value<a[mid]):
-           ends = mid
-           mid = (start + ends) // 2
-           
-        if(mid==ends or mid== start):
-            
-            return -1
-               
-          
-        return fun(a,start,ends,mid,value)
-    #return -1
-    
-
 
 a =[10,20,30,40,50,60,70]
+value = int(input("Enter value:: "))
 start = 0
 ends = len(a)-1
-mid = ends // 2
-
-value = int(input("Enter value:: "))
-
-value2 = fun(a,start,ends,mid,value)
-if(value2==-1):
-    print("not found")
+while(ends>=start):
+    mid = (start + ends)// 2
+    if(a[mid]==value):
+        print("found")
+        break
+    elif(value<a[mid]):
+        ends = mid-1
+    else:
+        start = mid + 1
+        
 else:
-    print("Value {} found at {} index".format(value,value2))           
-    
-    
-    
-    
-    
+    print("not found")
